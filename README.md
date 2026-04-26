@@ -219,14 +219,23 @@ baseURL: "http://YOUR_LOCAL_IP:5000/api"
 
 ---
 
-## 📸 Screenshots
+## 📸 App Screenshots
 
-*Add screenshots here*
+### 🔐 Authentication Flow
+<p>
+  <img src="mobile/screenshots/image1.jpeg" width="250"/>
+  <img src="mobile/screenshots/image2.jpeg" width="250"/>
+  <img src="mobile/screenshots/image3.jpeg" width="250"/>
+  <img src="mobile/screenshots/image4.jpeg" width="250"/>
+</p>
 
-```
-mobile/screenshots/login.png
-mobile/screenshots/tasks.png
-```
+### 📋 Task Management
+<p>
+  <img src="mobile/screenshots/image5.jpeg" width="250"/>
+  <img src="mobile/screenshots/image6.jpeg" width="250"/>
+  <img src="mobile/screenshots/image7.jpeg" width="250"/>
+  <img src="mobile/screenshots/image8.jpeg" width="250"/>
+</p>
 
 ---
 
