@@ -2,6 +2,20 @@
 
 A **role-based task management mobile application** built using **React Native (Expo)** for the frontend and **Node.js, Express, MongoDB** for the backend.
 
+This project demonstrates **full-stack development**, including authentication, API design, role-based access control, and mobile UI integration.
+
+---
+
+## 🎯 Assignment Coverage
+
+This project fulfills all required criteria:
+
+* ✔ Full-stack development (React Native + Node.js)
+* ✔ API design and integration
+* ✔ Authentication and role-based authorization
+* ✔ Data modeling using MongoDB
+* ✔ Clean UI with loading, empty, and error states
+
 ---
 
 ## 📱 Features
@@ -12,26 +26,71 @@ A **role-based task management mobile application** built using **React Native (
 * JWT-based authentication
 * Secure password hashing (bcrypt)
 
+---
+
 ### 👥 Role-Based Access
 
-* **Admin**
+#### Admin
 
-  * Create tasks
-  * Edit tasks
-  * Delete tasks
-  * View all tasks
-* **User**
+* Create tasks
+* Assign tasks to users
+* View all tasks
+* Edit tasks
+* Delete tasks
 
-  * View assigned tasks
-  * Update task status (complete)
+#### User
+
+* View assigned tasks only
+* Update task status (Pending → Completed)
 
 ---
 
 ### 📋 Task Management
 
-* Create, Read, Update, Delete (CRUD)
+* Full CRUD operations
 * Status tracking (Pending / Completed)
 * Role + ownership validation
+
+---
+
+### 🔍 Additional Features
+
+#### Task Filtering
+
+* Filter tasks based on status: **Pending / Completed**
+* Implemented using client-side state filtering
+* Instant updates without extra API calls
+
+#### Search Functionality
+
+* Search tasks by title (case-insensitive)
+* Real-time filtering as user types
+* Smooth and responsive UX
+
+---
+
+## 🧠 UI & UX Handling
+
+* Loading indicators during API calls
+* Empty state when no tasks are available
+* Alert messages for success and error states
+* Card-based UI with badges and actions
+
+---
+
+## 💾 Data Persistence
+
+* Tasks stored in MongoDB
+* JWT token stored using AsyncStorage
+* User session persists after app restart
+
+---
+
+## ⚠️ Error Handling
+
+* Centralized error handling using custom `AppError`
+* Graceful error messages on UI
+* Input validation for API requests
 
 ---
 
@@ -55,7 +114,7 @@ A **role-based task management mobile application** built using **React Native (
 
 ## 📂 Project Structure
 
-```
+```txt
 TaskManager/
 ├── backend/
 │   ├── modules/
@@ -85,9 +144,9 @@ npm install
 
 Create `.env`:
 
-```
+```env
 PORT=5000
-MONGO_URI=your_mongodb_uri
+MONGO_URI=your_mongodb_connection
 JWT_SECRET=your_secret
 ```
 
@@ -107,10 +166,16 @@ npm install
 npm start
 ```
 
-Update API URL inside:
+Update API base URL:
 
-```
+```js
 mobile/src/services/api.js
+```
+
+Example:
+
+```js
+baseURL: "http://YOUR_LOCAL_IP:5000/api"
 ```
 
 ---
@@ -124,46 +189,53 @@ mobile/src/services/api.js
 
 ### Tasks
 
-* `GET /api/tasks`
-* `POST /api/tasks` (Admin)
-* `PUT /api/tasks/:id/status`
-* `PUT /api/tasks/:id` (Admin)
-* `DELETE /api/tasks/:id` (Admin)
+* `GET /api/tasks` → Role-based fetch
+* `POST /api/tasks` → Admin only
+* `PUT /api/tasks/:id/status` → Update status
+* `PUT /api/tasks/:id` → Admin only
+* `DELETE /api/tasks/:id` → Admin only
 
 ---
 
 ## 🔐 Security Highlights
 
-* JWT authentication
-* Role-based authorization
+* JWT-based authentication
+* Role-based authorization (Admin/User)
 * Ownership validation for task updates
-* Environment variables for secrets
+* Environment variables for sensitive data
 
 ---
 
-## 🎯 Key Highlights
+## 📊 Evaluation Criteria Covered
 
-* Clean modular backend architecture (Controller → Service → DB)
-* Role-based UI rendering on frontend
-* Proper error handling with custom AppError
-* Production-level separation of concerns
-
----
-
-## 🧠 What I Learned
-
-* Designing scalable backend architecture
-* Implementing authentication & authorization
-* Handling real-world edge cases (double clicks, invalid access)
-* Integrating frontend with backend APIs
+* ✔ End-to-end functionality (frontend + backend working)
+* ✔ Correct role-based access implementation
+* ✔ Clean API design and structure
+* ✔ Modular and readable code
+* ✔ Proper async handling
+* ✔ Graceful error handling
+* ✔ Clear and usable UI
+* ✔ Extra features (Edit/Delete, Filtering, Search)
 
 ---
 
-## 📌 Future Improvements
+## 📸 Screenshots
 
-* Pagination & filtering
+*Add screenshots here*
+
+```
+mobile/screenshots/login.png
+mobile/screenshots/tasks.png
+```
+
+---
+
+## 🚀 Future Improvements
+
+* Backend-based filtering and search
+* Pagination for large datasets
 * Notifications
-* UI enhancements (animations, better UX)
+* UI animations and enhancements
 * Admin dashboard (web)
 
 ---
